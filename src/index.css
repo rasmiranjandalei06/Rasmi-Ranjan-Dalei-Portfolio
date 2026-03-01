@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F9F8F6] text-zinc-900 antialiased relative;
+  }
+  
+  body::before {
+    content: "";
+    @apply fixed inset-0 pointer-events-none opacity-[0.03] z-[9999];
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-sm;
+}
+
+.section-padding {
+  @apply py-20 px-6 md:px-12 lg:px-24;
+}
